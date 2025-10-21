@@ -17,3 +17,7 @@ This application is used to write aned keep track of a person workouts and set g
    ```bash
    npm run dev
    ```
+
+## Repo link
+
+https://github.com/bossuche9/Code-the-dream-React-final-project
