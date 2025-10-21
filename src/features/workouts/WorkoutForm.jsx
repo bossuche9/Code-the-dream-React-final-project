@@ -19,7 +19,7 @@ export default function WorkoutForm({ addWorkout }) {
   };
 
   const deleteSet = index => {
-    if (sets.length === 1) return; // keep at least one set
+    if (sets.length === 1) return;
     const updated = sets.filter((_, i) => i !== index);
     setSets(updated);
   };

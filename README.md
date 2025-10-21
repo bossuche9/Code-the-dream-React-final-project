@@ -15,6 +15,7 @@ This application is used to write aned keep track of a person workouts and set g
 
 2. Run the app using the following command:
    ```bash
+   npm install
    npm run dev
    ```
 

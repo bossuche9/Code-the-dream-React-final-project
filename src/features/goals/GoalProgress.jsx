@@ -2,16 +2,19 @@ export default function GoalProgress({ goal, clearGoal }) {
   const { exercise, targetWeight, targetReps } = goal;
 
   return (
-    <div className="goal-progress">
-      <h3>Current Goal</h3>
+    <div
+      className="goal-progress"
+      style={{
+        border: '1px solid #ccc',
+        padding: '10px',
+        marginBottom: '10px',
+      }}
+    >
+      <h3>{exercise}</h3>
       <p>
-        <strong>{exercise}</strong> — Aim for{' '}
-        <strong>
-          {targetWeight} lbs × {targetReps} reps
-        </strong>
+        Target: {targetWeight} lbs × {targetReps} reps
       </p>
-      <p>Keep training consistently to hit your target!</p>
-      <button onClick={clearGoal}>Clear Goal</button>
+      <button onClick={clearGoal}>Delete Goal</button>
     </div>
   );
 }
