@@ -14,7 +14,23 @@ export default function GoalForm({ setNewGoal }) {
   const handleSubmit = e => {
     e.preventDefault();
     if (!form.exercise) return alert('Please enter an exercise');
-    setNewGoal({ ...form, id: Date.now(), progress: 0 });
+
+    // Create the new goal
+    const newGoal = {
+      ...form,
+      id: Date.now(),
+      progress: 0,
+    };
+
+    // Add the goal
+    setNewGoal(newGoal);
+
+    // Reset the form after submission
+    setForm({
+      exercise: '',
+      targetWeight: '',
+      targetReps: '',
+    });
   };
 
   return (
@@ -40,7 +56,7 @@ export default function GoalForm({ setNewGoal }) {
         onChange={handleChange}
         placeholder="Target Reps"
       />
-      <button type="submit">Set Goal</button>
+      <button type="submit">Add Goal(s)</button>
     </form>
   );
 }

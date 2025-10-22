@@ -1,4 +1,10 @@
 import { useState } from 'react';
+import styled from 'styled-components';
+
+const StyledButton = styled.button`
+  margin-top: 10px;
+  margin-bottom: 1rem;
+`;
 
 export default function WorkoutItem({ workout, deleteWorkout, updateWorkout }) {
   const [isEditing, setIsEditing] = useState(false);
@@ -64,8 +70,12 @@ export default function WorkoutItem({ workout, deleteWorkout, updateWorkout }) {
               </li>
             ))}
           </ul>
-          <button onClick={() => setIsEditing(true)}>✏️ Edit</button>
-          <button onClick={() => deleteWorkout(workout.id)}>❌ Delete</button>
+          <StyledButton onClick={() => setIsEditing(true)}>
+            ✏️ Edit
+          </StyledButton>
+          <StyledButton onClick={() => deleteWorkout(workout.id)}>
+            ❌ Delete
+          </StyledButton>
         </div>
       )}
     </li>

@@ -1,4 +1,17 @@
 import { useState } from 'react';
+import styled from 'styled-components';
+
+const StyledButton = styled.button`
+  margin-top: 10px;
+`;
+
+const StyledDiv = styled.div`
+  margin-bottom: 0.5rem;
+`;
+
+const DeleteButton = styled.button`
+  margin-left: 0.5rem;
+`;
 
 export default function WorkoutForm({ addWorkout }) {
   const [exercise, setExercise] = useState('');
@@ -50,7 +63,7 @@ export default function WorkoutForm({ addWorkout }) {
       />
 
       {sets.map((set, i) => (
-        <div key={set.id} style={{ marginBottom: '0.5rem' }}>
+        <StyledDiv key={set.id}>
           <label>Set {i + 1}: </label>
           <input
             name="weight"
@@ -69,19 +82,15 @@ export default function WorkoutForm({ addWorkout }) {
             required
           />
 
-          <button
-            type="button"
-            onClick={() => deleteSet(i)}
-            style={{ marginLeft: '0.5rem', color: 'red' }}
-          >
-            ❌
-          </button>
-        </div>
+          <DeleteButton type="button" onClick={() => deleteSet(i)}>
+            ❌ Delete Set
+          </DeleteButton>
+        </StyledDiv>
       ))}
 
-      <button type="button" onClick={addSet}>
+      <StyledButton type="button" onClick={addSet}>
         ➕ Add Set
-      </button>
+      </StyledButton>
       <button type="submit">Add Exercise</button>
     </form>
   );
