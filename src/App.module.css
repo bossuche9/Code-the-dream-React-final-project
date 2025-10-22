@@ -1,0 +1,6 @@
+.container {
+  padding-top: 190px;
+  display: grid;
+  place-items: center;
+  min-height: 50vh;
+}
